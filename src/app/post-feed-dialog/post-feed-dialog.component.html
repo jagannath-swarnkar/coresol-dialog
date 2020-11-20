@@ -1,0 +1,64 @@
+<nb-card class="card" *ngIf="mediaType != 'video' ">
+   <img 
+    class="close-icon" 
+    src="https://imgur.com/IgUQnSG.png" 
+    title="close"
+    (click)="close()"
+    alt="close">
+    <img 
+        class="slider slide-left"
+        title="left"
+        (click)="handleSlide(false)"
+        src="https://imgur.com/gNw1sbv.png" 
+        alt="left">
+    <img 
+        class="slider slide-right"
+        title="right"
+        (click)="handleSlide(true)"
+        src="https://imgur.com/1yN2BT0.png" 
+        alt="right">
+    <nb-card-body class="card-body">
+      <img class="post-img" [src]="imagesList.length && imagesList[imageIndex] ? imagesList[imageIndex] : ''" alt="img">
+    </nb-card-body>
+    <p class="description mb-0 pb-1">{{description}}</p>
+</nb-card>
+
+<nb-card class="card" *ngIf="mediaType == 'video'">
+    <img 
+        class="close-icon" 
+        src="https://imgur.com/IgUQnSG.png" 
+        title="close"
+        (click)="close()"
+        alt="close">
+    <img 
+        class="slider slide-left"
+        title="left"
+        *ngIf="imagesList.length > 1"
+        (click)="handleSlide(false)"
+        src="https://imgur.com/gNw1sbv.png" 
+        alt="left">
+    <img 
+        class="slider slide-right"
+        title="right"
+        (click)="handleSlide(true)"
+        *ngIf="imagesList.length > 1"
+        src="https://imgur.com/1yN2BT0.png" 
+        alt="right">
+     <nb-card-body class="card-body">
+         <span *ngFor="let item of imagesList; let k = index" class="video-container {{k !== imageIndex ? 'd-none': ''}} p-0 m-0">
+             <video 
+                 id="my_video" 
+                 class="video" 
+                 controls 
+                 preload="auto"
+                 *ngIf="k==imageIndex"
+                 autoplay
+                 poster=''>
+                 <source [src]="imagesList.length ? imagesList[imageIndex] : ''" type='video/mp4' />
+                 <source [src]="imagesList.length ? imagesList[imageIndex] : ''" type='video/webm' />
+             </video>
+         </span>
+     </nb-card-body>
+     <!-- <p class="description">{{description}}</p> -->
+ </nb-card>
+
