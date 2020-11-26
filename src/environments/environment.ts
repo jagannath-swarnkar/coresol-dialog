@@ -3,7 +3,20 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  stripe: {
+    testKey: 'pk_test_51HrkkvBSjzeSa94djVwxOjSLPjV99YuVo2troy0a4iAqD5suVGR8jnQzJ9HEAtO6dJpN3uv5sHblezoLH8vNppdL00mZ7shUEd'
+  },
+  firebaseConfig : {
+    apiKey: "AIzaSyD5fHByWJpbpQ7oK6EuMSKDfDJllOGzBt4",
+    authDomain: "jagan-ae35e.firebaseapp.com",
+    databaseURL: "https://jagan-ae35e.firebaseio.com",
+    projectId: "jagan-ae35e",
+    storageBucket: "jagan-ae35e.appspot.com",
+    messagingSenderId: "878230387631",
+    appId: "1:878230387631:web:55a310b2a38e92fd70cd5a",
+    measurementId: "G-KKPRGQS6X4"
+  } 
 };
 
 /*

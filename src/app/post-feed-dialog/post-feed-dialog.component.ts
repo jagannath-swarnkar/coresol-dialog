@@ -1,6 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
 
+/**
+ * @description Coresol dialog
+ * @author Jagannath
+ * @Input content: any[] = [] - Required
+ * @Input description: string - Optional
+ * @Input title: string - Optional
+ * @Input mediaType: string (image / video) - Required
+ */
 @Component({
   selector: 'app-post-feed-dialog',
   templateUrl: './post-feed-dialog.component.html',
@@ -8,9 +16,9 @@ import { NbDialogRef } from '@nebular/theme';
 })
 export class PostFeedDialogComponent implements OnInit {
   @Input() content:any[] = [];
-  @Input() description: any;
-  @Input() title: any;
-  @Input() mediaType: any;
+  @Input() description: string;
+  @Input() title: string;
+  @Input() mediaType: string;
 
   imageIndex = 0;
   imagesList = [];
